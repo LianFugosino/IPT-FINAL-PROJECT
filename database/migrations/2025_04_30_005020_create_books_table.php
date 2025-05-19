@@ -13,9 +13,17 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('author');
+            $table->text('description')->nullable();
+            $table->string('isbn')->unique();
+            $table->date('published_date')->nullable();
+            $table->integer('stock')->default(0);
+            $table->decimal('price', 8, 2)->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
