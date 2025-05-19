@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class BorrowRecord extends Model
 {
+
+    protected $fillable = [
+        'book_id',
+        'user_id',
+        'borrowed_date',
+        'return_date'
+    ];
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -17,15 +24,5 @@ class BorrowRecord extends Model
     }
 }
 
-{
-{
-    Schema::create('users', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->string('email')->unique();
-        $table->string('password');
-        $table->timestamps();
-    });
-}
 
-}
+
