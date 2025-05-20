@@ -66,5 +66,6 @@ class ApiKeyController
         $apiKey->delete();
 
         return response()->json(['message' => 'API key deleted successfully']);
+        
     }
 }
