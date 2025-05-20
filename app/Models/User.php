@@ -16,4 +16,14 @@ class User extends Model
         'role',
         'password'
     ];
+
+    public function api_keys()
+    {
+        return $this->hasMany(ApiKey::class);
+    }
+
+    public function borrow_records()
+    {
+        return $this->hasMany(BorrowRecord::class);
+    }
 }
