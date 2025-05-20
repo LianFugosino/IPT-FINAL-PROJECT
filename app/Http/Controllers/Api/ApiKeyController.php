@@ -30,7 +30,7 @@ class ApiKeyController
         $apiKey = ApiKey::with('user')->find($id);
 
         if (!$apiKey) {
-            return response()->json(['message' => 'API key not found'], 404);
+            return response()->json(['message' => 'API key cannot be found'], 404);
         }
 
         return response()->json($apiKey);
@@ -41,7 +41,7 @@ class ApiKeyController
         $apiKey = ApiKey::find($id);
 
         if (!$apiKey) {
-            return response()->json(['message' => 'API key not found'], 404);
+            return response()->json(['message' => 'API key cannot be found'], 404);
         }
 
         $validated = $request->validate([
@@ -60,7 +60,7 @@ class ApiKeyController
         $apiKey = ApiKey::find($id);
 
         if (!$apiKey) {
-            return response()->json(['message' => 'API key not found'], 404);
+            return response()->json(['message' => 'API key cannot be found'], 404);
         }
 
         $apiKey->delete();
