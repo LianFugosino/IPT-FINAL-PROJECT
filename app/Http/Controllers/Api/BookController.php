@@ -35,7 +35,7 @@ class BookController extends Controller
         $book = Book::find($id);
 
         if (!$book) {
-            return response()->json(['message' => 'Book not found'], 404);
+            return response()->json(['message' => 'Book could not be found'], 404);
         }
 
         return response()->json($book);
@@ -46,7 +46,7 @@ class BookController extends Controller
         $book = Book::find($id);
 
         if (!$book) {
-            return response()->json(['message' => 'Book not found'], 404);
+            return response()->json(['message' => 'Book could not be found'], 404);
         }
 
         $validated = $request->validate([
@@ -69,7 +69,7 @@ class BookController extends Controller
         $book = Book::find($id);
 
         if (!$book) {
-            return response()->json(['message' => 'Book not found'], 404);
+            return response()->json(['message' => 'Book could not be found'], 404);
         }
 
         $book->delete();
